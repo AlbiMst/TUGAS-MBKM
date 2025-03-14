@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Luas dan Keliling Bangun Datar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: whitesmoke;
+            color: black;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: black;
+            font-size: 28px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid black;
+        }
+
+        .content {
+            max-width: 720px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        b {
+            color: blue;
+            font-weight: 500;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: #e2e8f0;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Menghitung Luas dan Keliling Bangun Datar</h1>
+    <div class="content">
+        <script>
+            // --- Persegi Panjang ---
+            let PanjangPersegiPanjang = 10;                                                 // variabel panjang persegi panjang dengan nilai 10
+            let LebarPersegiPanjang = 5;                                                    // variabel lebar persegi panjang dengan nilai 5
+            let LuasPersegiPanjang = PanjangPersegiPanjang * LebarPersegiPanjang;           // Menghitung luas persegi panjang (panjang x lebar)
+            let KelilingPersegiPanjang = 2 * (PanjangPersegiPanjang + LebarPersegiPanjang); // Menghitung keliling persegi panjang (2 x (panjang + lebar))
+            
+            // Menampilkan output ke halaman HTML
+            document.write(
+                "Diketahui suatu persegi panjang " + "<br>" +
+                "Panjang Persegi Panjang : <b>" + PanjangPersegiPanjang + "</b><br>" + // Menampilkan nilai panjang
+                "Lebar Persegi Panjang : <b>" + LebarPersegiPanjang + "</b><br>" +     // Menampilkan nilai lebar
+                "<br>" + 
+                "<b>Jawaban</b>" + "<br>" +
+                "Luas Persegi Panjang : <b>" + LuasPersegiPanjang + "</b><br>" +       // Menampilkan hasil luas
+                "Keliling Persegi Panjang : <b>" + KelilingPersegiPanjang + "</b>"     // Menampilkan hasil keliling
+            );
+
+            // --- Pemisah --- 
+            document.write("<hr>");
+
+            // --- Bujur Sangkar ---
+            let SisiBujurSangkar = 8;                                   // variabel sisi bujur sangkar dengan nilai 8
+            let LuasBujurSangkar = SisiBujurSangkar * SisiBujurSangkar; // Menghitung luas bujur sangkar (sisi x sisi)
+            let KelilingBujurSangkar = 4 * SisiBujurSangkar;            // Menghitung keliling bujur sangkar (4 x sisi)
+
+            // Menampilkan output ke halaman HTML
+            document.write(
+                "Diketahui suatu bujur sangkar " + "<br>" +
+                "Sisi Bujur Sangkar : <b>" + SisiBujurSangkar + "</b><br>" +    // Menampilkan nilai sisi
+                "<br>" +
+                "<b>Jawaban</b>" + "<br>" +
+                "Luas Bujur Sangkar : <b>" + LuasBujurSangkar + "</b><br>" +    // Menampilkan hasil luas
+                "Keliling Bujur Sangkar : <b>" + KelilingBujurSangkar + "</b>"  // Menampilkan hasil keliling
+            );
+
+            // --- Pemisah ---
+            document.write("<hr>");
+
+            // --- Segitiga ---
+            let AlasSegitiga = 6;                                   // variabel alas segitiga dengan nilai 6
+            let TinggiSegitiga = 4;                                 // variabel tinggi segitiga dengan nilai 4
+            let LuasSegitiga = (AlasSegitiga * TinggiSegitiga) / 2; // Menghitung luas segitiga ((alas x tinggi) : 2)
+
+            // Menampilkan output ke halaman HTML
+            document.write(
+                "Diketahui suatu segitiga " + "<br>" +
+                "Alas Segitiga : <b>" + AlasSegitiga + "</b><br>" +     // Menampilkan nilai alas 
+                "Tinggi Segitiga : <b>" + TinggiSegitiga + "</b><br>" + // Menampilkan nilai tinggi 
+                "<br>" +
+                "<b>Jawaban</b>" + "<br>" +
+                "Luas Segitiga : <b>" + LuasSegitiga + "</b>"           // Menampilkan hasil luas 
+            );
+        </script>
+    </div>
+</body>
+</html>
