@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Data Pegawai</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 40px auto;
+            border: 1px solid #D9EAFD;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        th {
+            border: 1px solid #D9EAFD;
+            padding: 12px;
+            background-color: #D9EAFD;
+            color: black;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        td {
+            border: 1px solid #D9EAFD;
+            padding: 15px;
+            text-align: center;
+            color: black;
+        }
+
+        thead {
+            border-bottom: 2px solid #9694FF;
+        }
+
+        tfoot {
+            border-top: 2px solid #9694FF;
+            background-color: #D9EAFD;
+            font-weight: 600;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Data pegawai
+        let namaPegawai = "Dodi Prayodi"
+        let umur = 25
+        let jabatan = "Manajer"
+        let status = "Menikah"
+
+        // Menentukan gaji pokok berdasarkan jabatan (if): Manajer=>15 jt, Asisten Manajer=>10 jt, Staff=>5 jt
+        let gajiPokok
+        if (jabatan === "Manajer") gajiPokok = 15000000 
+        else if (jabatan === "Asisten Manajer") gajiPokok = 10000000 
+        else if (jabatan === "Staff") gajiPokok = 5000000 
+
+        // Tunjangan Jabatan: 15% dari gapok
+        let tunjanganJabatan = gajiPokok * 0.15
+
+        // BPJS: 10% dari gapok
+        let bpjs = gajiPokok * 0.10
+
+        // Tunjangan Keluarga (ternary): dilihat dari status yg sudah menikah =>20% dari gapok
+        let tunjanganKeluarga = (status === "Menikah") ? gajiPokok * 0.20 : 0
+
+        // Total Gaji: jumlahlahkan seluruh element gaji
+        let totalGaji = gajiPokok + tunjanganJabatan + tunjanganKeluarga - bpjs
+
+        document.write(
+            "<table>" +
+                "<thead>" + // Judul Kolom
+                    "<tr>" +
+                        "<th>Nama Pegawai</th>" +
+                        "<th>Umur</th>" +
+                        "<th>Jabatan</th>" +
+                        "<th>Status</th>" +
+                        "<th>Gaji Pokok</th>" +
+                        "<th>Tunjangan Jabatan</th>" +
+                        "<th>BPJS</th>" +
+                        "<th>Tunjangan Keluarga</th>" +
+                    "</tr>" +
+                "</thead>" +
+                "<tbody>" + // data-data
+                    "<tr>" +
+                        "<td>" + namaPegawai + "</td>" + // Nama Pegawai
+                        "<td>" + umur + "</td>" + // Umur
+                        "<td>" + jabatan + "</td>" + // Jabatan
+                        "<td>" + status + "</td>" + // Status
+                        "<td>Rp " + gajiPokok + "</td>" + // Gaji Pokok
+                        "<td>Rp " + tunjanganJabatan + "</td>" + // Tunjangan Jabatan
+                        "<td>Rp " + bpjs + "</td>" + // BPJS
+                        "<td>Rp " + tunjanganKeluarga + "</td>" + // Tunjangan Keluarga
+                    "</tr>" +
+                "</tbody>" +
+                "<tfoot>" + // Total Gaji: seluruh element gaji
+                    "<tr>" +
+                        "<td colspan='7'>Total Gaji</td>" +
+                        "<td>Rp " + totalGaji + "</td>" +
+                    "</tr>" +
+                "</tfoot>" +
+            "</table>"
+        )
+    </script>
+</body>
+</html>
